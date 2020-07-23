@@ -1,0 +1,24 @@
+comparadores numericos:
+-eq igual
+-gt maior que
+-ge maior ou igual
+-lt menor que
+-le menor ou igual
+-le menor ou igual
+-ne diferente
+
+Comparadores de String
+= igual
+!= diferente
+> maior
+< menor
+-n comprimento maior que zero
+-z comprimento zero
+
+comparadores de arquivo
+-d verifica se eh diretorio 
+-e verifica se o arquivo existe
+-f verifica se tem arquivo
+-r verifica se tem permissao de leitura
+-w verifica se tem permissao de escrita
+-x verifica se tem permissao de execucao

@@ -1,0 +1,17 @@
+–yesno	Uma janela com opções de “Sim” ou “Não”
+–msgbox	Apenas mostra um texto informativo
+–infobox	Mesmo que –msgbox, só que desaparece automaticamente em um determinado tempo
+–inputbox	O usuário preenche um campo
+–rangebox	Escolhe um número entre X e Y, com uma barra de rolagem
+–textbox	Mostra o conteúdo de um arquivo numa caixa de texto
+–editbox	Edita o conteúdo de um arquivo numa caixa de texto
+–menubox	Cria um Menu de opções, onde se seleciona um item
+–checklist	Mesmo que –menubox, só que pode-se selecionar vários itens
+–radiolist	Mesmo que –menubox, mas agora em outro estilo
+–treeview	Opções organizadas em forma de “árvore” (interessante)
+–gauge	Um indicador de processo
+–tailbox	Mostra o conteúdo de um arquivo
+–fselect	Abre uma janela de seleção de um arquivo
+–dselect	Abre uma janela de seleção de um diretório
+–calendar	Mostra um calendário para escolher uma data
+–timebox	Mostra uma janela para edição de horário

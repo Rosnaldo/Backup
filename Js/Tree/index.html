@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tree</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+var Tree = function(val) {
+  this.value = val;
+  this.children = [];
+}
+
+Tree.prototype.addChild = function(value) {
+  this.children.push(new Tree(value))
+}
+
+Tree.prototype.contains = function(target) {
+  var result = false;
+  var inner = function(obj) {
+    if(obj.value === target) {
+      result = true;
+    }
+    obj.children.forEach(function (child) {
+      console.log('coisa');
+      console.log(child);
+      console.log(child.value);
+      inner(child);
+    })
+  }
+  inner(this);
+  return result;
+}
+  var maple = new Tree('Bruce');
+  maple.addChild('Abraham');
+  maple.addChild('Thomas');
+  maple.children[0].addChild('Thommy Junior');
+  maple.children[0].children[0].addChild('Sue');
+
+  console.log(maple)
+  console.log(maple.contains('Suee'))
+</script>
+</html>

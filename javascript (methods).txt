@@ -1,0 +1,250 @@
+https://javascript.info/   --> manual moderno do JS
+
+//Js
+document.createElement("p"); // .createTextNode("This is new.");
+document.getElementById("id01").childNodes[0].nodeValue; 
+              // .nodeType   .appendChild(element) .remove() replaceChild(para, child)  .removeChild(child);; 
+element
+.parentNode: retorna o elemento pai.
+.childNodes: retorna um array com todos os elementos filhos
+.firstChild: retorna o primeiro filho
+.lastChild: retorna o último filho
+.nextSibling: retorna o próximo irmão.
+.previousSibling: retorna o irmão anterior.
+.innerHTML = "<div><p>coisa</p><div/>"
+.outerHtml // retorna o elemento em forma de string
+.innerText = "texto"
+
+.insertAdjacentHTML // colo elemento em outra posicao // usar outerHtml
+
+// adicionar ou remover várias classes
+.classList
+	.add("red","green", blue);
+	.remove("red")
+	.contains("red")
+	.toggle("red") //remove se ja tiver
+
+.getElementById
+.getElementsByClassName
+.getElementsbyTagName
+.querySelector("p.test")
+document.getElementById("pai").querySelectorAll(".filho")[0]
+
+.gettAtribute("something")
+.settAtribute("class", "coisa")
+.attributes // todos os atributos
+
+//Eventoshttps://blog.dankicode.com/eventos-em-javascript/
+
+//Matematica
+int = Math.trunc(valor); //arrendodar
+Math.random(); // → 0.36993729369714856
+Math.floor(Math.random() * 20) + 1 // 1 a 20
+
+//Date
+let parts = date.split('/') //separa a data pelo caracter '/'
+
+//String
+str = "How are you doing today?"
+array = str.split(""); //H,o,w, ,a,r,e, ,y,o,u, ,d,o,i,n,g, ,t,o,d,a,y,?
+array = str.split(" "); //How,are,you,doing,today?
+
+sOne = "Frontend backend";
+sTwo = "Red tomato";
+string = sOne.charAt(1) = "r";
+string = sOne.concat(sTwo) = "Front end backendRed tomato";
+string = sOne.startsWith("Fro")
+string = sOne.endsWith("end") = true;
+string = sOne.includes("Front") = true;
+string = sOne.indexOf("end") = 5;
+string = sOne.lastIndexOf("end") = 13;
+string = sOne.match(/end/g) = ["end","end"];
+string = sTwo.repeat(2) = "Red tomatoRed tomato";
+string = sOne.replace(/end/g,"END") = "FrontEND backEND";
+string = sOne.search("end") = 5;
+string = sOne.slice(2,5) = "ont"; //slice(-2) pega os dois ultimos caraters
+string = sOne.slice(1) = "rontend backend" // tira a primeira letra 
+string = sOne.substr(2,5) = "onten";
+string = sOne.toLowerCase();
+string = sOne.toUpperCase();
+string = truncate("What I'd like to tell on this topic is:", 20) = "What I'd like to te…"
+string = sOne.trim(); //remove todos os espaços vazios (espaços, linhas, tabs e caracteres similares) 
+
+array = arrayStr.reverse(); //reverte 
+str = arrayStr.join("");
+
+//Array
+array.splice(n,1) //remove 1 elemento a partir do elemento n
+array.slice(1) //remove primeiro elem
+[0, 1, 2, 3, 4].slice(2, 4);
+// → [2, 3]
+
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1,3); ["Orange","Lemon"]
+
+fruits.indexOf("Banana"); // 0
+
+var fruits = ["Apple", "Orange", "Apple", "Mango"];
+var a = fruits.lastIndexOf("Apple"); //2
+
+var numbers = [4, 9, 16, 25, 29];
+var a = numbers.findIndex(val => val > 18); //index do prim elem true
+
+pop e push // adiciona e remove no fim
+shift e unshift //adiciona e remove no inicio
+
+fruits.includes('Banana') // retorna true ou false
+
+some // returna true se ao menos um elem satisfizer a condição
+[12, 5, 8, 1, 4].some(elem => elem > 10);
+every // retorna true se todos os elem satisfizerem a condição
+[12, 54, 18, 130, 44].every(elem => elem >= 10); // true
+
+//forEach
+["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+  alert(`${item} is at index ${index} in ${array}`);
+});
+
+//find
+let user = users.find(item => item.id == 1); // retorna um valor
+
+//  //map, reduce, fill, filter, sort
+//map
+vals = vals.map(x => x*2);
+console.log(vals);
+
+vals = vals.fill(0).map(Math.random);
+console.log(vals);
+
+const founds = vals.map(item => {
+  const reverseName = [].map.call(item.name, letter => letter).
+                    .reverse()
+                    .join('');
+  if (reverseName.toLowerCase() === item.name.toLowerCase())
+    return `This is palindromo: ${item.name}`;
+});
+
+
+//reduce
+let vals = [5,4,9,2,1];
+// array.reduce((acc, currentValue, index, array) => {}, initialValue)
+let sum = vals.reduce((acc, val) => {acc + val},0);
+console.log(sum) = 21;  //retorna o acc
+
+let biggest = val.reduce((acc, val) => {
+	if(val > acc){
+	acc = val;
+	}
+	return acc;
+});
+
+let biggest = vals.reduce((a,b) => val > acc ? val:acc);
+console.log(biggest) = 9;
+
+//filter
+let vals = [5,4,9,2,1];
+
+vals = vals.filter(x => x % 2 == 0);
+console.log(vals);
+
+function funcao(element, index, array) {
+  if(element >= 2 && element <= 11) return true;
+  return false;
+}
+
+
+//sort
+let s = ["It", "was", "a", "dark", "and", "stormy", "night"];
+s.sort((a, b) => a.length - b.length);
+console.log(s);
+
+negativo -> a depois do b
+positivo -> a antes do b
+zero -> tanto faz
+
+//Object
+Object.keys(obj)  //key
+
+Object.entries(css).forEach((key, value) => {
+    console.log(key + ' ' + value); // "a 5", "b 7", "c 9"     
+});
+
+//Desestruturação
+const endereco = {
+  rua: 'Al. Alguma coisa',
+  numero: 123,
+  uf_cidade: {
+    uf: 'SC',
+    cidade: 'Rio do Sul'
+  }
+};
+
+const { rua, numero, uf_cidade: { uf, cidade} } = endereco
+console.log(rua);
+console.log(cidade);
+
+//Array
+const array = [1,2,3,4,5];
+const [a, b, c] = array;
+console.log(a);
+array = [...array, 6, 7];
+const array2 = [...array, 6, 7];
+
+const [a,b,...c] = array;
+console.log(c) // c = [3, 4, 5]
+
+var [foo, [[bar], baz]] = [1, [[2], 3]];
+
+var [,,third] = ["foo", "bar", "baz"]; // "baz"
+var [head, ...tail] = [1, 2, 3, 4]; // "[2, 3, 4]"
+
+
+
+const css = { fontSize: 12, color: '#FFF' , 
+		johnDoe: {age:34, email: 'jo@.com'}
+	     };
+const { fontSize, color } = css;
+const { size: fontSize, co: color } = css;
+const { johnDoe: {age, email} } = css;
+const tituloCss = {
+  fontWeight: 'bold',
+  ...css, // fontSize:12, color: '#FFF'
+  fontSize: 20
+}
+
+let [x, y] = ['a', 'b']; 
+let obj = { x, y }; 
+console.log(obj); // { x: "a", y: "b" }
+
+
+function soma(a,b,...params) {
+ return Math.sum(params);
+}
+
+soma(1,2,3,4,5,6,7,8,9);
+
+
+const user = {
+  nome:'Diego',
+  empresa:'RocketSeat'
+};
+
+function mostraNomeEmpresa({nome, empresa}) {}
+
+const user = {
+  id, 
+  nome,
+}
+
+
+// Comparações
+Object.prototype.toString.call( [{12:2}]) === '[object Array]';
+
+
+
+
+// Numbers
+num = 5.55;
+Number((num).toFixed(1)) //5.5
+
+

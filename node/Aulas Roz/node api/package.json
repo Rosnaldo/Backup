@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "test": "jest --watchAll",
+    "dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "jest": "^25.5.4",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  }
+}

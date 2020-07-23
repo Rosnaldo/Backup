@@ -1,0 +1,43 @@
+docker version
+
+docker <command> <sub-command> <options>
+docker container/image/network/volume ls -->> ver lista de containers (em execução)
+docker container/image/network/volume ls -a -->> ver lista de containers (parados tb)
+
+docker container/image/network/volume --help -->> ver comandos
+
+docker container rm -f <id> -->> remove container
+docker container rm -f $(docker container ls -a -q) -->> remove todos os containers
+docker container prune -->> remove todos que estão parados
+
+docker container run -p <host/user> <image> -->> roda o container
+docker container run -d -p 80:80 --name <nome> <image> -->> roda em segundo plano
+
+docker container stop <id> -->> para de rodar
+
+docker container stats -->> cpu (propriedades)
+
+docker container inspect <name>
+
+docker container inspect -f {{.NetworkSettings}} <name>
+
+docker container run --name <name> --network <network> <image>:alpine
+
+docker container exec -it <name> sh
+ifconfig
+docker container exec -it <container1> ping <container2>
+
+docker network create <network>
+docker network create <network> --subnet <ip> --gatweb <ip>
+
+
+docker container run -d --name <container> -v mysql-db:var/lib/mysql -e MYSQL_ROOT_PASSWORD=password mysql
+docker container run -d --name <container> --mount 'type=volume,source=<volume>,target=<path>' -e  MYSQL_ROOT_PASSWORD=password mysql
+
+docker run -v data_volume:var/lib/mysql mysql
+docker run -v /data/mysql:/var/lib/mysql mysql
+docker run --mount type=bind,source=/data/mysql,target=/var/lib/mysql mysql
+
+
+docker-compose up -->> run arquivo <docker-compose.yml>, cria containers e imagens
+docker-compose down -->> desfaz os containers

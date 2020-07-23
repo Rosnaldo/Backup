@@ -1,0 +1,62 @@
+
+<------- Regex -------->
+
+Funcoes
+    test()  (avalia a ocorrencia. true or false)
+    exec()  (retorna a primeira ocorrencia)
+    str.match()  (retorna todas as ocorrencia)
+    str.replace()
+
+Modificadores
+    i  (case insensitive)
+    g  (procura todoas as ocorrencias e não para na primeira)
+    m  (procura em multipla linhas)
+
+Metacaracteres
+     .  (qq caracter)
+    \w  (a~z, 0~9, -)
+    \s  (' ')
+    \d  (0~9)
+    ^   (começa com 'x')
+    $   (termina com 'x')
+
+/./.test('@');
+/\d/.test('2');
+/\w/.test('A');
+/../.test('pi');
+alert(\.\.test("pier"));
+alert(\21$\.test("pier21"));
+alert(/^\d\d\d\d\d\-\d\d\d$/.test("70294-070"));
+
+
+Quantificadores
+    X*  (zero ou mais)
+    X+  (1 ou mais)
+    X?  (0 ou 1)
+    X{n} (n vezes)
+    X{n,} (pelo menos n vezes)
+    X{n, m} (pelo menos mas não mais do que m)
+alert(/\d{2}/.test("pier21"))
+alert(/^\d{2}\/\d{2}\/\d{2,4}$/.test("12/02/1980"))
+alert(/\w+@\w+\.\w{2,3}/)
+
+Agrupadores
+    [0-9]
+    [a-z]
+    (T|t) // caracter T ou t
+    (s|the) // s ou the
+
+    = // prévio
+    ! // negação prévia
+    <= // carateres póstumos
+    <! // negação póstuma
+    .(?=at) // 'fat' seleciona só o 'f'
+    .(?!at) // tudo menos 'at'
+    (?<=[tT]he). // 'thea' seleciona só o 'a'
+    (?<![tT]). // tudo menos 't' e 'T'
+
+
+
+const s = 'frase inteira'.replace(/(^|\s)[a-z]/g, function(x){ return x.toUpperCase(); }); // Frase Inteira
+
+

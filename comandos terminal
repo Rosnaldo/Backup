@@ -1,0 +1,123 @@
+
+https://explainshell.com/
+https://regexone.com/lesson/letters_and_digits?
+https://www.learnshell.org/en/Loops
+
+sudo lsof -t -i:3000
+sudo kill -9 <pid>
+
+ls -> mostra arquivos
+ls -a -> mostra arquivos ocultos tambem
+ls list* -> comeca com list
+ls *list -> termina com list
+ls ?is? -> incognita
+ls -l -> permissoes de acesso
+
+mkdir -> cria pasta
+
+cd -> volta para home
+cd .. -> volta para pasta pai
+pwd -> mosta path absoluto
+
+cp file1 file2 -> copia file1 e cola como file2
+mv file1 file2 -> move ou renomeia file1
+rm file -> remove file
+rmdir pasta-> remove pasta
+
+clear -> limpa tela
+
+touch file -> cria arquivo vazio
+
+cat file -> mostra no terminal conteudo do arquivos
+less -> mostra em paginas
+*obs spacebar -> muda de paginas
+*obs q -> sai do less
+head -5 file -> mostra os 5 primeiros items
+tail -5 file -> mostra os 5 ultimos items
+
+cat > list -> cria lista
+*obs ctr+d -> finaliza lista
+cat >> list -> continua lista
+cat list1 list2 > biglist -> concatena listas
+
+grep word file -> busca arquivos
+grep -i word file -> ignore upper/lower case sensitive
+grep -i 'word word2' file -> procura por frases
+
+wc -w file -> conta numero de palavras
+wc -l file -> conta numero de linhas
+
+sort file -> organiza em ordem alfabetica
+
+who -> lista usuarios  logados
+
+chmod go-rwx file -> configura permissoes
+*obs g-> group
+     o-> others
+     u-> user
+     a-> all
+     r-> read
+     w-> write
+     x-> execute
+     + -> add permission
+     - -> take away a permission
+
+ps -> verifica informacoes do processo
+ctrl+Z -> suspender um processo
+fg -> processo em foregrand
+bg -> processo em background
+kill %num -> mata job
+sleep 100 & -> sleep em background
+jobs -> lista de jobs
+
+df -h -> mostra espaco no systema
+du -h *-> mostra o numero kilobyes dos arquivos 
+gzip file -> zipa o arquivo
+zip -r nome_do_arquivo.zip diretório_ou_arquivo
+gunzip file -> deszipa o arquivo
+zcat -> le arquivos zipados
+file * -> mostra os arquivos
+
+find . -name "*.txt" -print -> procura arquivos por "txt"
+find . -size +1M -ls -> procurar arquivos com mais de 1M
+
+alias -> mostra lista de comandos renomeados
+alias remove='rm' -> renomeia um comando
+unalias remove -> desrenomeia
+
+listar(){
+    ls -l
+}
+listar=('ls -l')
+
+
+curl -o <arq_down> //dwonload do link do arquivo
+curl -C - -o <arq_down> //continua o downloda de onde parou
+curl -o <arq_down> -o <arq_down>
+curl -X GET <arq_down>
+curl -H "Content-Type: application/json" -d "{"lastname":"Henrique"}" https://httpbin.org/anything
+
+$0 – Retorna o nome do script que foi executado
+$N – Onde N é um número, corresponde ao argumento passado (1 = primeiro argumento, 2 = segundo argumento, 3 = terceiro argumento, etc)
+$* – Retorna todos os argumentos de uma vez.
+$# – Retorna a quantidade de argumentos passado para o script. (argc)
+
+sudo chown -R $USER <rota> //permissao do usuario
+
+
+// npm e node
+sudo apt update
+	// nao usar este comando ---> sudo apt install nodejs
+https://github.com/nodesource/distributions
+https://nodesource.com/blog/installing-node-js-tutorial-using-nvm-on-mac-os-x-and-ubuntu/
+
+sudo npm rm npm -g
+sudo apt-get remove nodejs
+
+sudo apt purge yarn // remove yarn
+
+http://amcositsupport.blogspot.com/2016/07/to-completely-uninstall-node-js-from.html
+
+
+//set watchers
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p

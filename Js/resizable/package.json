@@ -1,0 +1,16 @@
+{
+  "name": "Teste",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "dependencies": {
+    "jest-diff": "^25.1.0",
+    "node-fetch": "^2.6.0"
+  }
+}

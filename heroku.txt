@@ -1,0 +1,12 @@
+heroku create --remote [heroku-remote] --app [app-name]  // cria ambiente no heroku
+heroku git:remote -a [app-name]  // cria o remote do heroku
+git remote rename [old-remote] [new-remote]  // renomeia o remote do heroku
+
+git push [heroku-remote] [git-branch]:[heroku-banch]
+
+heroku config:set [env]=[value] --app [app-name]
+
+heroku config --app [app-name] //lista variaveis de ambiente
+
+//React
+heroku create [app-name] --buildpack mars/create-react-app

@@ -1,0 +1,61 @@
+-------------configuracao do git------------------
+git config --global user.name "Rosnaldinho Patricio"
+git config --global user.email "andreytsuzuki@gmail.com"
+--------------------------------------------------
+
+git init //cria repositório
+git status //mostra arquivos alterados que ainda não foram comitados
+git add -<arquivo> //add ao commit
+git add -<folder>/ //com "/" 
+git add<path> // sem "-"
+git add -A //add todos os arquivos
+git commit -m "descrição do commit" //faz commit
+git checkout [arquivo] // volta arquivo no ultimo commit
+git checkout [commit key] -- [arquivo] // volta arquivo no commit
+git reset HEAD -- [arquivo] //desadiciona arquivo //retira do staged
+git reset --soft [commit key] //desfaz todos os commits do historico até o commit escolhido
+git reset --hard [commit key] // desfaz histórico e volta o arquivo
+git log //histórico de commits
+git log --graph // mostra a estrutura do historico
+git diff // Mostra todas as mudanças passadas pelo add
+git whatchanged // arquivos alterados
+git whatchanged -p // linhas de códigos alterados
+git remote // mostra repositórios remotos
+//origin -> <nome_remote> //poderia ser qualquer nome
+git remote add origin <https://github.com/url.git> //localiza reposit�rio remoto
+
+//fazendo push pela primeira vez
+git push -u origin <nome_branch> // cria uma branch remota e liga com branch do pc
+git push origin master //envia alterações para repositório remoto
+git pull origin <nome_branch>//resgata projeto remoto
+git clone <https://github.com/url.git> //copia repositorio remoto para o seu computador
+
+git fetch origin // atualiza as branch remotas para o pc
+git branch // mostra as branchs
+git branch -r // branchs remotas
+git branch -a // mostra ambos
+git branch <nome_branch> // cria nova branch
+git branch -D <branch_nome> // deleta branch
+git push --set-upstream origin <branch_nome> // manda branch do pc para remoto
+git checkout <nome_branch> // muda de branch
+git checkout -b <nome_branch> // cria e muda de branch
+git merge <nome_branch> //merge cria um commit extra *sempre dar 'checkout master' antes
+git rebase <nome_branch> //merge o commit da branch anterior  *sempre dar 'checkout master' antes
+
+git statsh
+git stash list
+git stash apply
+
+https://www.youtube.com/watch?v=VpeU3VpszAc
+ci = commit
+co = checkout
+cm = checkout master
+cb = checkout -b
+st = status -sb
+sf = show --name-only
+lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
+incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
+outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
+unstage = reset HEAD --
+undo = checkout --
+rollback = reset --soft HEAD~1
