@@ -1,0 +1,10 @@
+node_modules/
+logs/
+dist/
+documentation/
+coverage/
+
+
+*.log
+*.pid
+*.seed

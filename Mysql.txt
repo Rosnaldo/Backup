@@ -1,3 +1,6 @@
+https://dev.mysql.com/downloads/repo/apt/   // link1
+https://downloads.mysql.com/archives/workbench/  // link2
+
 mysql -u root -p
 mysql -u root -p nome_da_database < caminho/ate/arquivo.sql
 show databases;

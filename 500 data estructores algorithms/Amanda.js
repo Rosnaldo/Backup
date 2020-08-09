@@ -33,15 +33,30 @@ const combination = (A, k) => {
   return out;
 };
 
-
-const alunos = ['Gi', 'Li', 'Gui', 'Jo', 'Fe', 'Sa', 'Do', 'Ju', 'Ge'];
-const gruposAntigos = [
-  ['Gi', 'Li'], ['Jo', 'Gui'], ['Sa', 'Fe'],
-  ['Gui', 'Gi', 'Fe'], ['Jo', 'Li', 'Sa'],
-  ['Do', 'Ju', 'Ge']
+const alunos = [
+  'Cai',
+  'Gui',
+  'Ped',
+  'Gio',
+  'Anb',
+  'Dou',
+  // 'Fel',
+  // 'Jul',
+  // 'Lau',
+  // 'Kev',
+  // 'Mig',
+  // 'Jon',
+  // 'Ama',
+  // 'Roz',
+  // 'Fol',
+  // 'And',
 ];
 
-const Amanda = (alunos, grAt, k) => {
+const gruposAntigos = [
+  ['Gui', 'Ped', 'Anb'],
+];
+
+const Amanda = (alunos, grAt, k, N) => {
   const aluKeys = {};
   let total = 1;
   for (let i = 0; i < alunos.length; i += 1) {
@@ -62,7 +77,7 @@ const Amanda = (alunos, grAt, k) => {
       .forEach(item => multp(item, map1));
   }
 
-  const keyExist = (B) => {
+  const restrict = (B) => {
     const arr = combination(B, 2);
     for (let i = 0; i < arr.length; i += 1) {
       if (map1.has(arr[i].reduce((acc, val) => acc * aluKeys[val], 1))) {
@@ -81,7 +96,7 @@ const Amanda = (alunos, grAt, k) => {
     const out = {};
     const recur = (i) => {
       if (B.length === k) {
-        if (!keyExist(B)) {
+        if (!restrict(B)) {
           out[arrayKey(B)] = [...B];
         }
         return;
@@ -97,21 +112,15 @@ const Amanda = (alunos, grAt, k) => {
   };
 
   const eqPoss = combEqPoss(alunos, k);
+  console.log(eqPoss)
 
-  const combRandom = (A, k) => {
+  const combTree = (A, k) => {
     const B = [];
-    const totalKey = (C) => {
-      return  C.reduce((acc, val) => acc * val, 1);
-    };
-    let bool;
+    const out = [];
     const recur = (i) => {
-      if (bool) {
-        return;
-      }
       if (B.length === k) {
-        if (totalKey(B) === total) {
-          bool = [...B];
-        }
+        // console.log(B);
+        out.push([...B]);
         return;
       }
       for (let j = i; j < A.length; j++) {
@@ -121,13 +130,35 @@ const Amanda = (alunos, grAt, k) => {
       }
     };
     recur(0);
-    return bool;
+    return out;
   };
-  const final = combRandom(Object.keys(eqPoss), alunos.length / k);
-  return final.reduce((acc, val) => [...eqPoss[val]], []);
+
+  // const combRandom = (A, h) => {
+  //   const B = [];
+  //   const totalKey = (C) => C.reduce((acc, val) => acc * val, 1);
+  //   let out = [];
+
+  //   const recur = (i) => {
+  //     if (out.length === N) {
+  //       return;
+  //     }
+  //     if (B.length === h) {
+  //       if (totalKey(B) === total) {
+  //         out = [...out, [...B]];
+  //       }
+  //       return;
+  //     }
+  //     for (let j = i; j < A.length; j++) {
+  //       B.push(A[j]);
+  //       recur(j + 1);
+  //       B.pop();
+  //     }
+  //   };
+  //   recur(0);
+  //   return out;
+  // };
+  // const final = combRandom(Object.keys(eqPoss), alunos.length / k);
+  // return final.map((arr) => arr.reduce((acc, val) => [...acc, [...eqPoss[val]]], []));
 }
 
-console.log(Amanda(alunos, gruposAntigos, 3))
-
-
-
+console.log(Amanda(alunos, gruposAntigos, 2, 2));

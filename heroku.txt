@@ -8,5 +8,8 @@ heroku config:set [env]=[value] --app [app-name]
 
 heroku config --app [app-name] //lista variaveis de ambiente
 
+heroku apps // ver todas as apps
+heroku:apps info [app-name] // detalhes da app
+
 //React
 heroku create [app-name] --buildpack mars/create-react-app

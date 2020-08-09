@@ -42,7 +42,7 @@ git checkout -b <nome_branch> // cria e muda de branch
 git merge <nome_branch> //merge cria um commit extra *sempre dar 'checkout master' antes
 git rebase <nome_branch> //merge o commit da branch anterior  *sempre dar 'checkout master' antes
 
-git statsh
+git stash
 git stash list
 git stash apply
 
