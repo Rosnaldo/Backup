@@ -9,7 +9,6 @@ const maxSubArray = (nums) => {
   };
 
   for (let i = 0; i < nums.length; i++) {
-    
     if (nums[i] > nums[i] + total(sub_max)) {
       sub_max = [nums[i]];
     } else {

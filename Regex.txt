@@ -2,14 +2,14 @@
 <------- Regex -------->
 
 Funcoes
-    test()  (avalia a ocorrencia. true or false)
-    exec()  (retorna a primeira ocorrencia)
+    regex.test()  (avalia a ocorrencia. true or false)
+    regex.exec()  (retorna a primeira ocorrencia)
     str.match()  (retorna todas as ocorrencia)
     str.replace()
 
 Modificadores
     i  (case insensitive)
-    g  (procura todoas as ocorrencias e não para na primeira)
+    g  (procura todo as ocorrencias e não para na primeira)
     m  (procura em multipla linhas)
 
 Metacaracteres

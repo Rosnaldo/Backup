@@ -1,11 +1,4 @@
-let first = true;
-
-const verification = (arr, k) => {
-  if (arr.length === k && first) {
-    console.log('coisa', arr)
-    first = false
-  }
-};
+let count = 0;
 
 const permutation = (A) => {
   const switchPosition = (arr, p1, p2) => {
@@ -17,12 +10,14 @@ const permutation = (A) => {
   const out = [];
   const recur = (arr, k) => {
     let len = arr.length;
-    if (verification(arr, k)) { return; }
     if (k === len) {
       out.push([...arr]);
     } else {
       for (let i = k; i < len; i++) {
+        count++;
+        console.log(arr, 'i', i, 'k', k);
         switchPosition(arr, i, k);
+        console.log(arr, 'i', i, 'k', k);
         recur(arr, k + 1);
         switchPosition(arr, k, i);
       }
@@ -33,4 +28,4 @@ const permutation = (A) => {
   return out;
 };
 
-permutation(['a', 'b', 'c']);
+console.log(permutation(['a', 'b', 'c']))

@@ -11,6 +11,7 @@ const combination = (A, k) => {
     }
     for (let j = i; j < A.length; j++) {
       B.push(A[j]);
+      console.log(B, 'j', j, 'i', i)
       recur(j + 1);
       B.pop();
     }
@@ -18,25 +19,8 @@ const combination = (A, k) => {
   recur(0);
   return out;
 };
+
 const arr = [1,2,3,4]
+
 console.log(combination(arr, 2));
 
-// recur = (str, out) => {
-//   if (str.length === 0) {
-//     console.log(out);
-//     return;
-//   }
-
-//   for (let i = 0; i < str.length; i++) {
-//     // push substring [0, i] into output vector
-//     out.push(str.slice(0, i + 1));
-
-//     // recur for remaining String [i+1, n-1]
-//     recur(str.slice(i + 1), out);
-
-//     // backtrack (remove current substring from vector)
-//     out.pop();
-//   }
-// }
-
-// recur('ABCD', []);

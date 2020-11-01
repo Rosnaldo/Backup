@@ -1,0 +1,8 @@
+npx sequelize migration:generate --name create-users-table
+npx sequelize db:migrate
+
+npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate // apaga o banco e refaz
+
+npx sequelize migration:generate --name create-userid-column-products-table
+
+npx sequelize db:seed:all // seed

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://localhost:4555/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io('http://localhost:4555');
+
+      socket.on('notification', (data) => {
+        document.getElementById('title').innerHTML = data.title;
+        document.getElementById('message').innerHTML = data.message;
+      });
+    </script>
+  </head>
+  <body>
+    <b><div id="title"></div></b>
+    <div id="message"></div>
+  </body>
+</html>
